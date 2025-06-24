@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>力动原子灰 - 专业工业涂料解决方案提供商 | 东莞邦昵涂料</title>
+  <meta name="description"
+    content="东莞邦昵涂料专业提供力动品牌原子灰系列产品，包括耐高温粉末喷涂原子灰、环氧防腐原子灰、铝合金快速施工原子灰。30年行业经验，为您提供专业技术支持与定制化解决方案。">
+  <meta name="keywords"
+    content="力动原子灰,粉末喷涂原子灰,环氧原子灰,铝合金原子灰,工业涂料,邦昵涂料,船舶涂料,汽车修补">
+  
+  <!-- 图标库 -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- 字体 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "力动原子灰",
+      "brand": {
+        "@type": "Brand",
+        "name": "BONNY"
+      },
+      "description": "专业工业涂料解决方案",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "CNY",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  </script>
+
+  <style>
+    /* ==================== 根变量 ==================== */
+    :root {
+      --primary: #FF5841; /* 活力橙红 */
+      --secondary: #1A1A1A; /* 深黑 */
+      --accent: #00D4AA; /* 科技绿 */
+      --highlight: #FFD700; /* 金黄强调色 */
+      --light: #F8F8F8; /* 浅灰背景 */
+      --dark: #0A0A0A; /* 深黑背景 */
+      --gray: #6B6B6B; /* 中性灰 */
+      --white: #FFFFFF;
+      --gradient-primary: linear-gradient(135deg, #FF5841 0%, #FF7B69 100%);
+      --gradient-dark: linear-gradient(180deg, #1A1A1A 0%, #2D2D2D 100%);
+      --gradient-accent: linear-gradient(135deg, #00D4AA 0%, #00E5BD 100%);
+      --shadow-glow: 0 0 60px rgba(255, 88, 65, 0.4);
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      /* 性能优化变量 */
+      --animation-speed: 1;
+      --particle-count: 30;
+      --use-backdrop: blur(10px);
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --animation-speed: 0.5;
+        --particle-count: 10;
+        --use-backdrop: none;
+      }
+    }
+
+    /* ==================== 基础样式重置 ==================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--secondary);
+      background-color: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ==================== 加载动画 ==================== */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader-content {
+      text-align: center;
+    }
+
+    .loader-logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+
+    .loader-circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 3px solid transparent;
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin calc(1.5s * var(--animation-speed)) linear infinite;
+    }
+
+    .loader-circle:nth-child(2) {
+      animation-delay: calc(0.2s * var(--animation-speed));
+      border-top-color: var(--accent);
+      transform: scale(0.8);
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ==================== 导航栏 ==================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.3s ease;
+      backdrop-filter: var(--use-backdrop);
+      -webkit-backdrop-filter: var(--use-backdrop);
+    }
+
+    .navbar.scrolled {
+      background: rgba(26, 26, 26, 0.95);
+      padding: 15px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 45px;
+      height: 45px;
+      background: var(--gradient-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: white;
+      font-size: 20px;
+      transform: rotate(-5deg);
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover .logo-icon {
+      transform: rotate(0deg) scale(1.1);
+    }
+
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--white);
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--gradient-primary);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 88, 65, 0.3);
+    }
+
+    .nav-cta:hover,
+    .nav-cta:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(255, 88, 65, 0.4);
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* ==================== 英雄区域 ==================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--dark);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .hero-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(255, 88, 65, 0.3)
+        0%, transparent 50%);
+      z-index: 2;
+    }
+
+    /* ==================== 整合的动画区域 ==================== */
+    .hero-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+
+    /* 动画容器样式 */
+    .hero-animation-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* 时间轴动画 */
+    .timeline-animation {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: fadeInOut calc(8s * var(--animation-speed)) infinite;
+    }
+
+    .timeline-line {
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FF5841 0%, #00D4AA 100%);
+      animation: expandLine calc(2s * var(--animation-speed)) ease-out
+        forwards;
+      will-change: width;
+    }
+
+    .timeline-point {
+      position: absolute;
+      bottom: calc(20% - 10px);
+      width: 20px;
+      height: 20px;
+      background: #FF5841;
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0);
+      will-change: transform, opacity;
+    }
+
+    .year-2009 {
+      left: 10%;
+      animation: popIn calc(0.3s * var(--animation-speed)) calc(0.5s *
+        var(--animation-speed)) ease-out forwards;
+    }
+
+    .year-2024 {
+      left: 80%;
+      animation: popIn calc(0.3s * var(--animation-speed)) calc(1.5s *
+        var(--animation-speed)) ease-out forwards;
+    }
+
+    .timeline-text {
+      position: absolute;
+      bottom: calc(20% + 30px);
+      color: white;
+      font-weight: 600;
+      opacity: 0;
+      will-change: opacity;
+    }
+
+    .text-2009 {
+      left: 8%;
+      animation: fadeIn calc(0.5s * var(--animation-speed)) calc(0.6s *
+        var(--animation-speed)) forwards;
+    }
+
+    .text-2024 {
+      left: 78%;
+      animation: fadeIn calc(0.5s * var(--animation-speed)) calc(1.6s *
+        var(--animation-speed)) forwards;
+    }
+
+    .achievement-counter {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn calc(0.5s * var(--animation-speed)) calc(1.8s *
+        var(--animation-speed)) forwards;
+      will-change: opacity;
+    }
+
+    .counter-number {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #00D4AA;
+      display: block;
+    }
+
+    .counter-text {
+      color: white;
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    /* AR场景动画 */
+    .ar-scene {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: fadeInOut calc(8s * var(--animation-speed)) calc(2.5s *
+        var(--animation-speed)) infinite;
+    }
+
+    .ar-device {
+      position: absolute;
+      top: 30%;
+      left: 20%;
+      width: 200px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #00D4AA;
+      border-radius: 10px;
+      backdrop-filter: var(--use-backdrop);
+      animation: float calc(3s * var(--animation-speed)) ease-in-out
+        infinite;
+      will-change: transform;
+    }
+
+    .ar-pointer {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ar-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 3px solid #FF5841;
+      border-radius: 50%;
+      animation: pulse calc(2s * var(--animation-speed)) infinite; /* 修复：接入动画速度变量 */
+      will-change: transform;
+    }
+
+    .ar-dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #FF5841;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ar-info {
+      position: absolute;
+      top: 35%;
+      right: 25%;
+      background: rgba(0, 212, 170, 0.9);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      opacity: 0;
+      animation: slideIn calc(0.5s * var(--animation-speed)) calc(3s *
+        var(--animation-speed)) forwards;
+      will-change: transform, opacity;
+    }
+
+    /* 船舶转换效果 */
+    .transformation-scene {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: fadeInOut calc(8s * var(--animation-speed)) calc(5s *
+        var(--animation-speed)) infinite;
+    }
+
+    .ship-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      will-change: transform;
+    }
+
+    .ship-before, .ship-after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .ship-before {
+      background: linear-gradient(135deg, #8B4513 0%, #696969 100%);
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+      border-radius: 20px;
+    }
+
+    .ship-after {
+      background: linear-gradient(135deg, #1E90FF 0%, #87CEEB 100%);
+      border-radius: 20px;
+    }
+
+    .divider-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: white;
+      transform: translateX(-50%);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+      animation: moveDivider calc(3s * var(--animation-speed)) calc(5.5s *
+        var(--animation-speed)) ease-in-out forwards;
+      will-change: left;
+    }
+
+    .before-text, .after-text {
+      position: absolute;
+      top: -40px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: white;
+      will-change: opacity;
+    }
+
+    .before-text {
+      left: 20%;
+      opacity: 0;
+      animation: fadeIn calc(0.5s * var(--animation-speed)) calc(5.5s *
+        var(--animation-speed)) forwards;
+    }
+
+    .after-text {
+      right: 20%;
+      opacity: 0;
+      animation: fadeIn calc(0.5s * var(--animation-speed)) calc(6.5s *
+        var(--animation-speed)) forwards;
+    }
+
+    /* 动画关键帧 */
+    @keyframes fadeInOut {
+      0%, 32% { opacity: 0; }
+      35%, 97% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes expandLine {
+      to { width: 70%; }
+    }
+
+    @keyframes popIn {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes moveDivider {
+      to { left: 100%; }
+    }
+
+    /* 交互热点 */
+    .hotspot {
+      position: absolute;
+      width: 48px; /* 从40px增加到48px */
+      height: 48px; /* 从40px增加到48px */
+      background: rgba(255, 88, 65, 0.8);
+      border-radius: 50%;
+      cursor: pointer;
+      animation: hotspotPulse calc(2s * var(--animation-speed)) infinite; /* 修复：接入动画速度变量 */
+      transition: all 0.3s ease;
+      will-change: transform;
+    }
+
+    .hotspot:hover {
+      transform: scale(1.2);
+      background: #FF5841;
+    }
+
+    .hotspot-ar {
+      top: 45%;
+      left: 30%;
+    }
+
+    .hotspot-product {
+      bottom: 30%;
+      right: 30%;
+    }
+
+    @keyframes hotspotPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255, 88, 65, 0.4); }
+      50% { box-shadow: 0 0 0 20px rgba(255, 88, 65, 0); }
+    }
+
+    /* 粒子效果 */
+    .hero-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0;
+      animation: floatUp calc(20s * var(--animation-speed)) infinite; /* 修复：接入动画速度变量 */
+      will-change: transform, opacity;
+    }
+
+    @keyframes floatUp {
+      0% { opacity: 0; transform: translateY(100vh) scale(0); }
+      10% { opacity: 1; transform: translateY(90vh) scale(1); }
+      90% { opacity: 1; transform: translateY(10vh) scale(1); }
+      100% { opacity: 0; transform: translateY(0) scale(0); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-text {
+      animation: fadeInUp calc(1s * var(--animation-speed)) ease-out; /* 修复：接入动画速度变量 */
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 212, 170, 0.1);
+      border: 1px solid rgba(0, 212, 170, 0.3);
+      padding: 8px 16px;
+      border-radius: 30px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge i {
+      font-size: 16px;
+    }
+
+    .hero-title {
+      font-size: clamp(48px, 8vw, 72px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: white;
+      margin-bottom: 24px;
+      letter-spacing: -2px;
+    }
+
+    .hero-title span {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: white;
+      box-shadow: 0 4px 20px rgba(255, 88, 65, 0.4);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255, 88, 65, 0.5);
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+    }
+
+    .stat-label {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* 产品展示区 */
+    .hero-visual {
+      position: relative;
+      animation: fadeIn calc(1.5s * var(--animation-speed)) ease-out 0.5s
+        both; /* 修复：接入动画速度变量 */
+    }
+
+    .product-showcase {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .showcase-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: var(--use-backdrop);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .showcase-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(10px);
+      border-color: var(--primary);
+    }
+
+    .showcase-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-primary);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .showcase-content h3 {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .showcase-content p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+
+    /* ==================== 产品特性区 ==================== */
+    .features {
+      padding: 120px 0;
+      background: var(--light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--primary) 50%,
+        transparent 100%);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 88, 65, 0.1);
+      border: 1px solid rgba(255, 88, 65, 0.3);
+      padding: 8px 16px;
+      border-radius: 30px;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--secondary);
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .section-title span {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      position: relative;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feature-icon-box {
+      width: 70px;
+      height: 70px;
+      background: var(--gradient-primary);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 32px;
+      color: white;
+    }
+
+    .feature-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+
+    .feature-description {
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .feature-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .spec-tag {
+      background: var(--light);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* ==================== 交互式计算器 ==================== */
+    .calculator-section {
+      padding: 120px 0;
+      background: var(--secondary);
+      color: white;
+      position: relative;
+    }
+
+    .calculator-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .calculator-info h2 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .calculator-info p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* ==================== 新增计算器样式 ==================== */
+    /* 新计算器卡片样式 */
+    .calculator-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 30px;
+      flex: 1;
+      min-width: 300px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .results-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 30px;
+      flex: 1;
+      min-width: 300px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      color: #FFD700;
+      font-size: 24px;
+    }
+
+    .card-title i {
+      font-size: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #a0c0e0;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #00D4AA;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 12px;
+    }
+
+    .btn-calc {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #FF5841 0%, #FF7B69 100%);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .btn-calc:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 88, 65, 0.4);
+    }
+
+    .btn-calc i {
+      font-size: 18px;
+    }
+
+    .result-value {
+      font-size: 42px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00D4AA 0%, #00E5BD 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .result-label {
+      text-align: center;
+      color: #a0c0e0;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .procurement-advice {
+      background: rgba(0, 212, 170, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 20px;
+      border-left: 4px solid #00D4AA;
+    }
+
+    .advice-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      color: #00D4AA;
+    }
+
+    .advice-content p {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .advice-content strong {
+      color: #FFD700;
+    }
+
+    .procurement-tips {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    .tips-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: #FFD700;
+    }
+
+    .calculation-steps {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+
+    .step {
+      display: flex;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #FF5841 0%, #FF7B69 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      margin-bottom: 8px;
+      color: #FFD700;
+    }
+
+    .step-content p {
+      color: #a0c0e0;
+    }
+
+    .factors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .factor {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 15px;
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .factor i {
+      font-size: 28px;
+      color: #00D4AA;
+      margin-bottom: 10px;
+    }
+
+    .factor h4 {
+      margin-bottom: 8px;
+      color: #FFD700;
+    }
+
+    @media (max-width: 768px) {
+      .calculator-container {
+        flex-direction: column;
+      }
+      
+      .result-value {
+        font-size: 36px;
+      }
+      
+      .card-title {
+        font-size: 20px;
+      }
+    }
+
+    /* ==================== 案例展示 ==================== */
+    .cases {
+      padding: 120px 0;
+      background: white;
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .case-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      height: 400px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .case-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .case-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .case-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .case-card:hover .case-overlay {
+      opacity: 1;
+    }
+
+    .case-category {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--secondary);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .case-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .case-description {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+
+    /* ==================== 合作伙伴 ==================== */
+    .partners-section {
+      padding: 80px 0;
+      background: var(--light);
+    }
+
+    .partners-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    .partner-logo {
+      width: 150px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .partner-logo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+
+    .partner-logo:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* ==================== CTA区域 ==================== */
+    .cta {
+      padding: 120px 0;
+      background: var(--gradient-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%);
+      animation: pulse calc(3s * var(--animation-speed)) ease-in-out
+        infinite; /* 修复：接入动画速度变量 */
+      will-change: transform;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: 56px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .cta-subtitle {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .cta-input {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      padding: 16px 24px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .cta-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .cta-input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.3);
+      border-color: white;
+    }
+
+    .cta-button {
+      background: white;
+      color: var(--primary);
+      padding: 16px 32px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ==================== 页脚 ==================== */
+    .footer {
+      background: var(--secondary);
+      color: white;
+      padding: 80px 0 40px;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand h3 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.75); /* 提高对比度 */
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-link {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .footer-column h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.75); /* 提高对比度 */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 40px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ==================== AR预览按钮 ==================== */
+    .ar-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--gradient-accent);
+      color: var(--secondary);
+      padding: 16px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 212, 170, 0.4);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+
+    .ar-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 212, 170, 0.5);
+    }
+
+    /* ==================== 响应式设计 ==================== */
+    /* 移动端：0-768px */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 0;
+      }
+      
+      .nav-menu {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+      
+      .hero-visual {
+        margin-top: 0;
+      }
+      
+      .hero-title {
+        font-size: 36px;
+      }
+      
+      .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .hero-buttons {
+        justify-content: center;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .calculator-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .cta-form {
+        flex-direction: column;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+      
+      .footer-social {
+        justify-content: center;
+      }
+      
+      .ar-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+      }
+      
+      /* 移动端动画优化 */
+      .counter-number {
+        font-size: 3rem;
+      }
+      
+      .ar-device {
+        width: 150px;
+        height: 100px;
+      }
+      
+      .ship-container {
+        width: 300px;
+        height: 200px;
+      }
+      
+      /* 移动端时间轴调整为垂直布局 */
+      .timeline-line {
+        bottom: 10%;
+        left: 50%;
+        width: 3px;
+        height: 0;
+        transform: translateX(-50%);
+        animation: expandLineVertical calc(2s * var(--animation-speed))
+          ease-out forwards;
+      }
+      
+      @keyframes expandLineVertical {
+        to { height: 60%; }
+      }
+      
+      .year-2009 {
+        left: calc(50% - 10px);
+        bottom: 10%;
+      }
+      
+      .year-2024 {
+        left: calc(50% - 10px);
+        bottom: 65%;
+      }
+      
+      .text-2009 {
+        left: calc(50% + 30px);
+        bottom: 8%;
+      }
+      
+      .text-2024 {
+        left: calc(50% + 30px);
+        bottom: 63%;
+      }
+      
+      /* 船舶对比改为上下布局 */
+      .ship-before {
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+      }
+      
+      .divider-line {
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 4px;
+        transform: translateY(-50%);
+        animation: moveDividerVertical calc(3s * var(--animation-speed))
+          calc(5.5s * var(--animation-speed)) ease-in-out forwards;
+      }
+      
+      @keyframes moveDividerVertical {
+        to { top: 100%; }
+      }
+      
+      .before-text {
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .after-text {
+        bottom: 10%;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+      
+      /* 移动端减少粒子数量和动画 */
+      .particle {
+        animation-duration: calc(25s * var(--animation-speed));
+      }
+      
+      /* 禁用高消耗特效 */
+      .ar-device {
+        backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    /* 480px断点 */
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 32px;
+      }
+      
+      .hero-subtitle {
+        font-size: 16px;
+      }
+      
+      .section-title {
+        font-size: 32px;
+      }
+      
+      .cta-title {
+        font-size: 40px;
+      }
+      
+      .cta-subtitle {
+        font-size: 18px;
+      }
+      
+      .stat-number {
+        font-size: 28px;
+      }
+      
+      .feature-card {
+        padding: 30px;
+      }
+    }
+
+    /* 平板：769px-1024px */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .hero-content {
+        gap: 60px;
+      }
+      
+      .calculator-container {
+        gap: 60px;
+      }
+      
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* 桌面：1025px+ */
+    @media (min-width: 1025px) {
+      /* 桌面端特定样式 */
+    }
+
+    /* ==================== 优化新增样式 ==================== */
+    /* 移动端菜单样式 */
+    .nav-menu.mobile-show {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: rgba(26, 26, 26, 0.98);
+      padding: 30px 20px;
+      gap: 25px;
+      z-index: 999;
+      height: calc(100vh - 80px);
+      overflow-y: auto;
+      animation: slideDown 0.4s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Toast通知 */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gradient-accent);
+      color: var(--secondary);
+      padding: 16px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    /* 性能优化 */
+    @media (max-width: 768px) {
+      .feature-card, .showcase-card {
+        will-change: transform;
+      }
+      
+      .case-card {
+        will-change: transform, box-shadow;
+      }
+    }
+
+    /* 表单错误提示 */
+    .form-error {
+      color: #ff6b6b;
+      font-size: 13px;
+      margin-top: 5px;
+      display: none;
+    }
+
+    /* 禁用页面滚动 */
+    .body-no-scroll {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    /* 性能监控 */
+    .performance-monitor {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      z-index: 2000;
+      display: flex;
+      gap: 8px;
+    }
+
+    .fps-indicator {
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .fps-good {
+      background: var(--accent);
+    }
+
+    .fps-warning {
+      background: orange;
+    }
+
+    .fps-critical {
+      background: var(--primary);
+    }
+
+    /* 焦点样式优化 */
+    .btn:focus, .nav-cta:focus, .nav-link:focus, .mobile-menu-btn:focus,
+    .form-input:focus, .cta-input:focus, .social-link:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 加载动画 -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+      </div>
+      <p style="color: white; font-weight: 600;">力动原子灰 · 专业工业涂料解决方案</p>
+    </div>
+  </div>
+
+  <!-- 性能监控器 -->
+  <div class="performance-monitor" id="performanceMonitor">
+    <div>FPS: <span id="fpsCounter">60</span></div>
+    <div class="fps-indicator fps-good" id="fpsIndicator">良好</div>
+  </div>
+
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" aria-label="力动原子灰首页">
+        <div class="logo-icon">力动</div>
+        <span class="logo-text">BONNY COATINGS</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#features" class="nav-link" aria-label="产品特性">产品特性</a></li>
+        <li><a href="#calculator" class="nav-link" aria-label="用量计算">用量计算</a></li>
+        <li><a href="#cases" class="nav-link" aria-label="应用案例">应用案例</a></li>
+        <li><a href="#partners" class="nav-link" aria-label="合作品牌">合作品牌</a></li>
+        <li><a href="#contact" class="nav-cta" aria-label="立即询价">立即询价</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-label="菜单切换">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 英雄区域 -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <!-- 整合的动画区域 -->
+      <div class="hero-animation">
+        <div class="hero-animation-container">
+          <!-- 场景1：30年历程时间轴 -->
+          <div class="timeline-animation">
+            <div class="timeline-line"></div>
+            <div class="timeline-point year-2009"></div>
+            <div class="timeline-point year-2024"></div>
+            <div class="timeline-text text-2009">创立</div>
+            <div class="timeline-text text-2024">转型升级</div>
+            <div class="achievement-counter">
+              <span class="counter-number">1000+</span>
+              <span class="counter-text">服务企业客户</span>
+            </div>
+          </div>
+          <!-- 场景2：AR远程指导 -->
+          <div class="ar-scene">
+            <div class="ar-device">
+              <div class="ar-pointer">
+                <div class="ar-circle"></div>
+                <div class="ar-dot"></div>
+              </div>
+            </div>
+            <div class="ar-info">AR远程施工指导</div>
+            <!-- 交互热点 -->
+            <div class="hotspot hotspot-ar" onclick="window.location.href='#ar-service'" aria-label="查看AR服务"></div>
+          </div>
+          <!-- 场景3：涂装效果对比 -->
+          <div class="transformation-scene">
+            <div class="ship-container">
+              <div class="ship-after"></div>
+              <div class="ship-before"></div>
+              <div class="divider-line"></div>
+              <div class="before-text">施工前</div>
+              <div class="after-text">施工后</div>
+            </div>
+            <!-- 交互热点 -->
+            <div class="hotspot hotspot-product" onclick="window.location.href='#products'" aria-label="查看产品"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <i class="fas fa-award"></i>
+          <span>30年行业经验</span>
+        </div>
+        <h1 class="hero-title">
+          专业的<br>
+          <span>工业涂料解决方案</span>
+        </h1>
+        <p class="hero-subtitle">
+          东莞邦昵涂料专业提供力动品牌原子灰系列产品，联合PPG、雅克等国际品牌，
+          为船舶、汽车、机械设备提供一站式涂装解决方案。
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary" aria-label="获取免费样品">
+            <span>获取免费样品</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <button class="btn btn-secondary" onclick="showProducts()" aria-label="查看产品系列">
+            <i class="fas fa-cube"></i>
+            <span>查看产品系列</span>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">1000+</span>
+            <span class="stat-label">企业客户</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">客户满意度</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24h</span>
+            <span class="stat-label">技术响应</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="product-showcase">
+          <div class="showcase-card">
+            <div class="showcase-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <div class="showcase-content">
+              <h3>耐高温系列</h3>
+              <p>力动粉末喷涂原子灰 - 导电上粉，耐高温性能卓越</p>
+            </div>
+          </div>
+          <div class="showcase-card">
+            <div class="showcase-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="showcase-content">
+              <h3>防腐系列</h3>
+              <p>力动环氧原子灰 - 1:1配比，超强耐腐蚀性能</p>
+            </div>
+          </div>
+          <div class="showcase-card">
+            <div class="showcase-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="showcase-content">
+              <h3>快速施工系列</h3>
+              <p>力动铝合金原子灰 - 30分钟可打磨，快修快补</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 产品特性 -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <i class="fas fa-star"></i>
+          <span>核心优势</span>
+        </div>
+        <h2 class="section-title">
+          为什么选择<span>力动原子灰</span>
+        </h2>
+        <p class="section-subtitle">
+          专业选品、技术服务、快速响应，为您提供超越期待的涂装体验
+        </p>
+      </div>
+      <div class="features-grid">
+        <!-- 耐高温系列特性 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fas fa-temperature-high"></i>
+          </div>
+          <h3 class="feature-title">粉末喷涂耐高温性能</h3>
+          <p class="feature-description">
+            力动粉末喷涂原子灰采用特殊导电配方，支持静电喷涂工艺，
+            耐高温性能优异，适用于需要粉末涂装的金属表面处理。
+          </p>
+          <div class="feature-specs">
+            <span class="spec-tag">导电上粉</span>
+            <span class="spec-tag">耐高温</span>
+            <span class="spec-tag">静电喷涂</span>
+          </div>
+        </div>
+        <!-- 防腐系列特性 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fas fa-water"></i>
+          </div>
+          <h3 class="feature-title">环氧超强防腐性能</h3>
+          <p class="feature-description">
+            力动环氧原子灰采用1:1简易配比，施工便捷。
+            优异的耐腐蚀性能，可长期在海洋环境、化学品环境下使用。
+          </p>
+          <div class="feature-specs">
+            <span class="spec-tag">1:1配比</span>
+            <span class="spec-tag">环氧防腐</span>
+            <span class="spec-tag">耐化学品</span>
+          </div>
+        </div>
+        <!-- 快速施工系列特性 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="feature-title">铝合金快速施工体验</h3>
+          <p class="feature-description">
+            力动铝合金原子灰专为快速修补设计，30分钟内可打磨，
+            大幅提升施工效率，特别适合汽车钣金快修场景。
+          </p>
+          <div class="feature-specs">
+            <span class="spec-tag">30分钟打磨</span>
+            <span class="spec-tag">快修快补</span>
+            <span class="spec-tag">铝合金专用</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="feature-title">环保低VOC配方</h3>
+          <p class="feature-description">
+            所有力动产品均符合国家环保标准，VOC含量严格控制。
+            通过多项环保认证，为绿色施工保驾护航。
+          </p>
+          <div class="feature-specs">
+            <span class="spec-tag">低VOC</span>
+            <span class="spec-tag">环保认证</span>
+            <span class="spec-tag">绿色施工</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fas fa-link"></i>
+          </div>
+          <h3 class="feature-title">专业技术支持</h3>
+          <p class="feature-description">
+            30年行业经验团队，提供一对一技术指导。
+            从产品选型到施工培训，全程为您的项目保驾护航。
+          </p>
+          <div class="feature-specs">
+            <span class="spec-tag">技术培训</span>
+            <span class="spec-tag">施工指导</span>
+            <span class="spec-tag">24h响应</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3 class="feature-title">库存充足快速配送</h3>
+          <p class="feature-description">
+            东莞本地大型仓储中心，常备充足库存。
+            珠三角地区24小时送达，其他地区48-72小时配送到位。
+          </p>
+          <div class="feature-specs">
+            <span class="spec-tag">现货供应</span>
+            <span class="spec-tag">快速配送</span>
+            <span class="spec-tag">灵活发货</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用量计算器 - 已替换为专业计算器 -->
+  <section class="calculator-section" id="calculator">
+    <div class="container">
+      <div class="calculator-container">
+        <div class="calculator-info">
+          <h2>智能用量计算器</h2>
+          <p>
+            输入您的施工参数，系统将自动计算所需原子灰用量，
+            帮助您精准采购，避免浪费。
+          </p>
+          <p>
+            基于10000+施工案例数据优化的算法， 计算精度达95%以上。
+          </p>
+        </div>
+        
+        <!-- 新的计算器结构 -->
+        <div class="calculator-card">
+          <div class="card-title">
+            <i class="fas fa-calculator"></i>
+            <h2>原子灰用量计算器</h2>
+          </div>
+          <div class="form-group">
+            <label for="area">施工面积 (平方米)</label>
+            <input type="number" id="area" class="form-control" placeholder="例如: 100" min="1" value="100">
+          </div>
+          <div class="form-group">
+            <label for="thickness">平均厚度 (毫米)</label>
+            <input type="number" id="thickness" class="form-control" placeholder="例如: 2" min="0.1" step="0.1" value="2">
+          </div>
+          <div class="form-group">
+            <label for="product-type">产品类型</label>
+            <select id="product-type" class="form-control">
+              <option value="powder">力动粉末喷涂原子灰</option>
+              <option value="epoxy">力动环氧原子灰</option>
+              <option value="aluminum">力动铝合金原子灰</option>
+            </select>
+          </div>
+          <button class="btn-calc" onclick="calculate()">
+            <i class="fas fa-calculator"></i>
+            计算用量
+          </button>
+        </div>
+        
+        <div class="results-card">
+          <div class="card-title">
+            <i class="fas fa-chart-bar"></i>
+            <h2>计算结果</h2>
+          </div>
+          <div class="result-value" id="result-value">0 公斤</div>
+          <div class="result-label" id="result-label">施工所需原子灰总量</div>
+          <div class="procurement-advice">
+            <div class="advice-title">
+              <i class="fas fa-box-open"></i>
+              <h3>采购建议</h3>
+            </div>
+            <div class="advice-content" id="procurement-content">
+              <p>包装规格: <strong id="package-size">25公斤/袋</strong></p>
+              <p>基础用量: <strong id="base-bags">0</strong> 袋</p>
+              <p>建议采购: <strong id="recommended-bags">0</strong> 袋 (含10%余量)</p>
+            </div>
+          </div>
+          <div class="procurement-tips">
+            <div class="tips-title">
+              <i class="fas fa-info-circle"></i>
+              <h3>温馨提示</h3>
+            </div>
+            <p>实际用量可能因基材表面粗糙度、施工技术水平、环境温湿度等因素变化 ±5%</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculation-steps">
+        <div class="card-title">
+          <i class="fas fa-list-ol"></i>
+          <h2>计算过程</h2>
+        </div>
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>体积计算</h4>
+            <p>体积 = 面积 × 厚度 = <span id="step-area">100</span> m² × <span id="step-thickness">0.002</span> m = <span id="step-volume">0.2</span> m³</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>理论重量计算</h4>
+            <p>理论重量 = 体积 × 密度 = <span id="step-volume-2">0.2</span> m³ × <span id="step-density">1900</span> kg/m³ = <span id="step-theoretical">380</span> kg</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>实际用量计算（含损耗）</h4>
+            <p>实际用量 = 理论重量 × (1 + 损耗率) = <span id="step-theoretical-2">380</span> kg × (1 + <span id="step-wastage">0.18</span>) = <span id="step-actual">448.4</span> kg</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="factors">
+        <div class="factor">
+          <i class="fas fa-drafting-compass"></i>
+          <h4>基材表面粗糙度</h4>
+          <p>表面越粗糙，用量增加5-15%</p>
+        </div>
+        <div class="factor">
+          <i class="fas fa-user-hard-hat"></i>
+          <h4>施工技术水平</h4>
+          <p>技术不足可能增加10-20%损耗</p>
+        </div>
+        <div class="factor">
+          <i class="fas fa-temperature-high"></i>
+          <h4>环境温湿度</h4>
+          <p>高温高湿环境影响固化效果</p>
+        </div>
+        <div class="factor">
+          <i class="fas fa-tools"></i>
+          <h4>喷涂设备性能</h4>
+          <p>设备不佳增加材料损耗</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用案例 -->
+  <section class="cases" id="cases">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <i class="fas fa-trophy"></i>
+          <span>成功案例</span>
+        </div>
+        <h2 class="section-title">
+          见证<span>力动品质</span>
+        </h2>
+        <p class="section-subtitle">
+          从豪华游艇到重型机械，力动原子灰守护每一个重要时刻
+        </p>
+      </div>
+      <div class="cases-grid">
+        <div class="case-card">
+          <img
+            data-src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=600&h=400&fit=crop"
+            alt="船舶维修" class="case-image lazy">
+          <div class="case-overlay">
+            <span class="case-category">船舶工业</span>
+            <h3 class="case-title">江龙船艇高端游艇项目</h3>
+            <p class="case-description">
+              采用力动环氧原子灰为价值2000万的豪华游艇提供全船体修复方案，
+              经过3年海洋环境考验，涂层依然完美如初。
+            </p>
+          </div>
+        </div>
+        <div class="case-card">
+          <img
+            data-src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop"
+            alt="汽车修复" class="case-image lazy">
+          <div class="case-overlay">
+            <span class="case-category">汽车维修</span>
+            <h3 class="case-title">高端汽车快修中心</h3>
+            <p class="case-description">
+              使用力动铝合金原子灰，30分钟快速打磨，
+              为高端汽车提供完美无瑕的车身修复，达到原厂品质标准。
+            </p>
+          </div>
+        </div>
+        <div class="case-card">
+          <img
+            data-src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop"
+            alt="工业设备" class="case-image lazy">
+          <div class="case-overlay">
+            <span class="case-category">重型机械</span>
+            <h3 class="case-title">山西华翔装备制造</h3>
+            <p class="case-description">
+              采用力动粉末喷涂原子灰为大型工程机械提供防腐涂装解决方案，
+              在恶劣工况下延长设备寿命超过5年。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作伙伴 -->
+  <section class="partners-section" id="partners">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <i class="fas fa-handshake"></i>
+          <span>合作品牌</span>
+        </div>
+        <h2 class="section-title">
+          携手国际品牌 提供<span>优质产品</span>
+        </h2>
+        <p class="section-subtitle">
+          与PPG、雅克等国际知名品牌深度合作，确保产品品质始终如一
+        </p>
+      </div>
+      <div class="partners-grid">
+        <div class="partner-logo">
+          <div style="font-size: 24px; font-weight: bold; color: #0066CC;">PPG</div>
+        </div>
+        <div class="partner-logo">
+          <div style="font-size: 24px; font-weight: bold; color: #E60012;">YAKO</div>
+        </div>
+        <div class="partner-logo">
+          <div style="font-size: 20px; font-weight: bold; color: #FF5841;">力动 BONNY</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA区域 -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">准备好提升您的涂装品质了吗？</h2>
+        <p class="cta-subtitle">
+          立即申请免费样品，体验力动原子灰带来的卓越性能。
+          专业技术团队24小时在线，为您提供一对一解决方案。
+        </p>
+        <form class="cta-form" id="ctaForm">
+          <input type="tel" class="cta-input" id="phoneInput" placeholder="请输入您的手机号码" inputmode="numeric" required>
+          <button type="submit" class="cta-button">获取免费样品</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>力动 BONNY</h3>
+        <p>
+          东莞邦昵涂料有限公司，30年专注工业涂装解决方案，
+          为全球1000+企业提供高品质原子灰产品与专业服务。
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="微信">
+            <i class="fab fa-weixin"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="抖音">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="微博">
+            <i class="fab fa-weibo"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="电话">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>产品中心</h4>
+        <ul class="footer-links">
+          <li><a href="#">力动粉末喷涂原子灰</a></li>
+          <li><a href="#">力动环氧原子灰</a></li>
+          <li><a href="#">力动铝合金原子灰</a></li>
+          <li><a href="#">水性漆系列</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>技术支持</h4>
+        <ul class="footer-links">
+          <li><a href="#">施工指南</a></li>
+          <li><a href="#">产品认证</a></li>
+          <li><a href="#">技术参数</a></li>
+          <li><a href="#">常见问题</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>联系我们</h4>
+        <ul class="footer-links">
+          <li><i class="fas fa-phone"></i> 400-808-3132</li>
+          <li><i class="fas fa-envelope"></i> info@bonnycoatings.com</li>
+          <li><i class="fas fa-map-marker"></i> 东莞市万江区牌楼基</li>
+          <li><i class="fas fa-clock"></i> 周一至周日 8:30-22:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2023 东莞邦昵涂料有限公司 版权所有
+    </div>
+  </footer>
+
+  <!-- AR预览按钮 -->
+  <div class="ar-button" aria-label="AR产品预览">
+    <i class="fas fa-vr-cardboard"></i>
+    <span>AR产品预览</span>
+  </div>
+
+  <!-- Toast通知 -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    /* ========== 页面加载初始化 - 开始 ========== */
+    document.addEventListener('DOMContentLoaded', function() {
+      // 延迟隐藏加载动画
+      setTimeout(function() {
+        const loader = document.getElementById('loader');
+        loader.classList.add('hidden');
+        // 动画结束后移除元素
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 600);
+      }, 800);
+      
+      // 初始化所有模块
+      initMobileMenu();
+      initScrollEffects();
+      initFormValidation();
+      initPerformanceMonitor();
+      
+      // 性能模式初始化
+      initPerformanceMode();
+      
+      // 延迟加载粒子动画（性能优化）
+      setTimeout(initParticles, 1000);
+      initLazyLoad();
+      
+      // 初始化IntersectionObserver用于延迟加载动画
+      initAnimationObserver();
+    });
+
+    /* ========== 页面加载初始化 - 结束 ========== */
+
+    /* ========== 性能模式初始化 - 开始 ========== */
+    function initPerformanceMode() {
+      // 检测网络条件和设备性能
+      if ('connection' in navigator) {
+        const connection = navigator.connection;
+        // 低速网络或省电模式启用性能模式
+        if (connection.saveData || /2g|3g/.test(connection.effectiveType)) {
+          enablePerformanceMode();
+          showToast('检测到低速网络，已优化性能', 'warning');
+        }
+      }
+      
+      // 低端设备检测
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if (/iPhone OS 9_|iPhone OS 10_|Android 4|Android 5/.test(navigator.userAgent)) {
+          enablePerformanceMode();
+          showToast('检测到低端设备，已优化性能', 'warning');
+        }
+      }
+    }
+
+    function enablePerformanceMode() {
+      document.documentElement.style.setProperty('--particle-count', '5');
+      document.documentElement.style.setProperty('--animation-speed', '0.3');
+    }
+    /* ========== 性能模式初始化 - 结束 ========== */
+
+    /* ========== 性能监控模块 - 开始 ========== */
+    function initPerformanceMonitor() {
+      const fpsCounter = document.getElementById('fpsCounter');
+      const fpsIndicator = document.getElementById('fpsIndicator');
+      const monitor = document.getElementById('performanceMonitor');
+      
+      let lastTime = performance.now();
+      let frameCount = 0;
+      let currentFps = 60;
+      
+      function updateFPS() {
+        const now = performance.now();
+        frameCount++;
+        
+        // 每秒更新一次
+        if (now >= lastTime + 1000) {
+          currentFps = Math.round((frameCount * 1000) / (now - lastTime));
+          fpsCounter.textContent = currentFps;
+          
+          // 更新指示器状态
+          fpsIndicator.className = 'fps-indicator ';
+          if (currentFps >= 50) {
+            fpsIndicator.classList.add('fps-good');
+            fpsIndicator.textContent = '良好';
+          } else if (currentFps >= 30) {
+            fpsIndicator.classList.add('fps-warning');
+            fpsIndicator.textContent = '警告';
+          } else {
+            fpsIndicator.classList.add('fps-critical');
+            fpsIndicator.textContent = '卡顿';
+            
+            // 自动降级动画
+            if (!document.documentElement.classList.contains('performance-mode')) {
+              document.documentElement.classList.add('performance-mode');
+              document.documentElement.style.setProperty('--animation-speed', '0.2');
+              document.documentElement.style.setProperty('--particle-count', '5');
+              
+              // 显示Toast通知
+              showToast('检测到性能问题，已简化动画效果', 'warning');
+            }
+          }
+          
+          frameCount = 0;
+          lastTime = now;
+        }
+        
+        requestAnimationFrame(updateFPS);
+      }
+      
+      // 移动端默认隐藏监控器
+      if (window.innerWidth <= 768) {
+        monitor.style.display = 'none';
+      }
+      
+      updateFPS();
+    }
+    /* ========== 性能监控模块 - 结束 ========== */
+
+    /* ========== 移动端菜单功能 - 开始 ========== */
+    function initMobileMenu() {
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navMenu = document.getElementById('navMenu');
+      const body = document.body;
+      
+      mobileMenuBtn.addEventListener('click', function() {
+        // 切换菜单显示状态
+        navMenu.classList.toggle('mobile-show');
+        
+        // 更新ARIA属性
+        const isExpanded = navMenu.classList.contains('mobile-show');
+        mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+        
+        // 更新滚动锁定
+        if (isExpanded) {
+          body.classList.add('body-no-scroll');
+        } else {
+          body.classList.remove('body-no-scroll');
+        }
+        
+        // 更新图标
+        const icon = mobileMenuBtn.querySelector('i');
+        if (isExpanded) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+      
+      // 点击菜单项后关闭菜单
+      const navLinks = document.querySelectorAll('.nav-link, .nav-cta');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 768) {
+            navMenu.classList.remove('mobile-show');
+            body.classList.remove('body-no-scroll');
+            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+    /* ========== 移动端菜单功能 - 结束 ========== */
+
+    /* ========== 用量计算器功能 - 开始 ========== */
+    // 产品参数配置
+    const PRODUCTS = {
+      powder: {
+        name: "力动粉末喷涂原子灰",
+        density: 1900, // kg/m³
+        wastageRate: 0.18, // 18%
+        packageSize: 25 // kg
+      },
+      epoxy: {
+        name: "力动环氧原子灰",
+        density: 2100, // kg/m³
+        wastageRate: 0.15, // 15%
+        packageSize: 25 // kg
+      },
+      aluminum: {
+        name: "力动铝合金原子灰",
+        density: 1750, // kg/m³
+        wastageRate: 0.12, // 12%
+        packageSize: 20 // kg
+      }
+    };
+
+    function calculate() {
+      // 获取输入值
+      const area = parseFloat(document.getElementById('area').value);
+      const thickness = parseFloat(document.getElementById('thickness').value);
+      const productType = document.getElementById('product-type').value;
+      
+      // 获取产品参数
+      const product = PRODUCTS[productType];
+      
+      // 验证输入
+      if (isNaN(area) || area <= 0 || isNaN(thickness) || thickness <= 0) {
+        showToast("请输入有效的面积和厚度值", "error");
+        return;
+      }
+      
+      // 专业计算过程
+      // 1. 体积计算（面积 × 厚度，单位转换为米）
+      const volume = area * (thickness / 1000);
+      
+      // 2. 理论重量计算（体积 × 密度）
+      const theoreticalWeight = volume * product.density;
+      
+      // 3. 实际用量计算（含损耗）
+      const actualWeight = theoreticalWeight * (1 + product.wastageRate);
+      
+      // 4. 包装计算
+      const baseBags = Math.ceil(actualWeight / product.packageSize);
+      const recommendedBags = baseBags + Math.ceil(baseBags * 0.1); // 增加10%余量
+      
+      // 更新结果显示
+      document.getElementById('result-value').textContent = 
+        actualWeight.toFixed(1) + " 公斤";
+      document.getElementById('result-label').textContent = 
+        product.name + "施工所需总量";
+      
+      // 更新采购建议
+      document.getElementById('package-size').textContent = 
+        product.packageSize + "公斤/袋";
+      document.getElementById('base-bags').textContent = 
+        baseBags + " 袋 (" + (baseBags * product.packageSize).toFixed(0) + "公斤)";
+      document.getElementById('recommended-bags').textContent = 
+        recommendedBags + " 袋 (" + (recommendedBags * product.packageSize).toFixed(0) + "公斤)";
+      
+      // 更新计算过程
+      document.getElementById('step-area').textContent = area;
+      document.getElementById('step-thickness').textContent = (thickness / 1000).toFixed(3);
+      document.getElementById('step-volume').textContent = volume.toFixed(3);
+      document.getElementById('step-density').textContent = product.density;
+      document.getElementById('step-theoretical').textContent = theoreticalWeight.toFixed(1);
+      document.getElementById('step-wastage').textContent = product.wastageRate;
+      document.getElementById('step-actual').textContent = actualWeight.toFixed(1);
+      document.getElementById('step-volume-2').textContent = volume.toFixed(3);
+      document.getElementById('step-theoretical-2').textContent = theoreticalWeight.toFixed(1);
+    }
+
+    // 页面加载时初始化计算
+    window.onload = calculate;
+    /* ========== 用量计算器功能 - 结束 ========== */
+
+    /* ========== 粒子动画优化 - 开始 ========== */
+    function initParticles() {
+      const particlesContainer = document.getElementById('particles');
+      let particles = [];
+      let animationId = null;
+      
+      // 创建粒子
+      function createParticles() {
+        particlesContainer.innerHTML = '';
+        particles = [];
+        
+        // 根据CSS变量设置粒子数量
+        const styleValue = 
+          getComputedStyle(document.documentElement).getPropertyValue('--particle-count').trim();
+        const particleCount = parseInt(styleValue) || 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+          
+          // 随机位置和大小
+          const size = Math.random() * 2 + 2; // 2-4px
+          const posX = Math.random() * 100;
+          const delay = Math.random() * 5;
+          
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${posX}%`;
+          particle.style.animationDelay = `${delay}s`;
+          
+          particlesContainer.appendChild(particle);
+          particles.push(particle);
+        }
+      }
+      
+      // 处理页面可见性变化
+      function handleVisibilityChange() {
+        if (document.hidden) {
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+          }
+        }
+      }
+      
+      // 初始化粒子
+      createParticles();
+      
+      // 添加可见性变化监听
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+      
+      // 窗口大小变化时重新创建粒子
+      window.addEventListener('resize', function() {
+        createParticles();
+      });
+    }
+    /* ========== 粒子动画优化 - 结束 ========== */
+
+    /* ========== 图片懒加载功能 - 开始 ========== */
+    function initLazyLoad() {
+      const lazyImages = document.querySelectorAll('.lazy');
+      
+      // 检查浏览器是否支持Intersection Observer
+      if ('IntersectionObserver' in window) {
+        const lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.classList.remove('lazy');
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        }, {
+          rootMargin: '200px 0px' // 提前200px加载
+        });
+        
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // 不支持时的回退方案
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+        });
+      }
+    }
+    /* ========== 图片懒加载功能 - 结束 ========== */
+
+    /* ========== 滚动效果优化 - 开始 ========== */
+    function initScrollEffects() {
+      const navbar = document.getElementById('navbar');
+      let lastScrollY = window.scrollY;
+      let ticking = false;
+      
+      // 节流滚动事件
+      window.addEventListener('scroll', function() {
+        lastScrollY = window.scrollY;
+        
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            handleScroll(lastScrollY);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+      
+      // 处理滚动逻辑
+      function handleScroll(scrollY) {
+        // 导航栏滚动效果
+        if (scrollY > 100) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+      
+      // 初始化状态
+      handleScroll(window.scrollY);
+    }
+    /* ========== 滚动效果优化 - 结束 ========== */
+
+    /* ========== 表单验证功能 - 开始 ========== */
+    function initFormValidation() {
+      const ctaForm = document.getElementById('ctaForm');
+      const phoneInput = document.getElementById('phoneInput');
+      
+      // 电话号码输入过滤
+      phoneInput.addEventListener('input', function() {
+        // 只允许数字输入
+        this.value = this.value.replace(/[^\d]/g, '');
+        // 限制长度
+        if (this.value.length > 11) {
+          this.value = this.value.slice(0, 11);
+        }
+      });
+      
+      ctaForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const phone = phoneInput.value.trim();
+        const phoneRegex = /^1[3-9]\d{9}$/;
+        
+        // 修复：添加非空校验
+        if (!phone) {
+          showToast('手机号不能为空', 'error');
+          phoneInput.focus();
+          return;
+        }
+        
+        if (!phoneRegex.test(phone)) {
+          showToast('请输入有效的手机号码', 'error');
+          phoneInput.focus();
+          return;
+        }
+        
+        // 显示提交成功消息
+        showToast('提交成功！我们将尽快联系您', 'success');
+        
+        // 重置表单
+        ctaForm.reset();
+      });
+    }
+    /* ========== Toast通知功能 - 全局函数 ========== */
+    function showToast(message, type) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      
+      // 设置不同状态的颜色
+      if (type === 'success') {
+        toast.style.background = 'var(--gradient-accent)';
+      } else if (type === 'warning') {
+        toast.style.background = 'linear-gradient(135deg, #FF9800 0%, #FFC107 100%)';
+      } else {
+        toast.style.background = 'var(--gradient-primary)';
+      }
+      
+      toast.classList.add('show');
+      
+      // 3秒后隐藏
+      setTimeout(function() {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+    /* ========== 表单验证功能 - 结束 ========== */
+
+    /* ========== 产品展示功能 - 开始 ========== */
+    function showProducts() {
+      // 滚动到产品特性区域
+      document.getElementById('features').scrollIntoView({
+        behavior: 'smooth'
+      });
+      
+      // 显示提示
+      showToast('正在展示产品系列', 'info');
+    }
+    /* ========== 产品展示功能 - 结束 ========== */
+
+    /* ========== 动画延迟加载 - 开始 ========== */
+    function initAnimationObserver() {
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // 添加动画类
+              entry.target.classList.add('animate');
+              // 停止观察
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          rootMargin: '200px 0px',
+          threshold: 0.1
+        });
+        
+        // 观察需要动画的元素
+        document.querySelectorAll('.hero-text, .hero-visual, .feature-card').forEach(el => {
+          observer.observe(el);
+        });
+      }
+    }
+    /* ========== 动画延迟加载 - 结束 ========== */
+  </script>
+</body>
+</html>
